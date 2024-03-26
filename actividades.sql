@@ -15,3 +15,4 @@ ORDER BY BillingCity DESC --Seleccionamos distinct para que no repita desde invo
 SELECT Title FROM albums WHERE Title LIKE "%of%" --contiene :%l% termina:%l empieza: l%
 ORDER BY title ASC  --ASC:acendente DESC :desendente 
 --E7--
+
