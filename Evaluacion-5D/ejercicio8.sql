@@ -3,5 +3,5 @@ join person p on fe.person_id = p.id
 join income inc on p.ssn = inc.ssn 
 where inc.annual_income > 35000
 group by  event_name
-order by count(fe.person_id) DESC
+order by popularidad DESC
 limit 5 

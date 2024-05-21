@@ -1,4 +1,3 @@
-select type, city from crime_scene_report
+select DISTINCT type, city from crime_scene_report ---distinct para no repetir
 where city = "SQL City" 
-GROUP by type
-order by type
+order by type ASC 

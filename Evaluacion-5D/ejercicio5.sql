@@ -1,2 +1,2 @@
-SELECT gender, min(age), max(age), avg(age) from drivers_license   
+SELECT gender, min(age) as edad_minima, max(age) as edad_maxima, avg(age) as edad_promedio from drivers_license   
 where gender = "male" 
