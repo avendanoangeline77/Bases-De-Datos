@@ -11,3 +11,4 @@ VALUES ("El perdedor",1, 1200, 2.8 ), ("Lloro por ti", 1, 1000, 2.5), ("Dile que
 update tracks 
 set MediaTypeId = 1
 where TrackId > 3500
+
