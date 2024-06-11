@@ -1,19 +1,13 @@
 
---DELETE FROM genres
-  --WHERE GenreId in (SELECT tk.GenreId FROM genres g
-    --            join tracks tk on g.GenreId = tk.GenreId
-      --          GROUP by g.name
-        --        having count(tk.name) < 50) ;
-
-UPDATE tracks set TrackId = null 
-where  in (SELECT TrackId FROM playlist_track plt 
-                  JOIN tracks t on  plt.TrackId = t.TrackId
-				  JOIN invoice_items ii on t.TrackId = ii.TrackId);
-
-DELETE FROM tracks
-  where GenreId in (SELECT tk.GenreId FROM genres g
-                join tracks tk on g.GenreId = tk.GenreId
-                GROUP by g.name
-                having count(tk.name) < 50) ;
-                --ORDER by canciones DESC)
+UPDATE tracks set GenreId = null 
+WHERE GenreId in (SELECT g.GenreId FROM genres g LEFT JOIN tracks t on g.GenreId = t.GenreId
+                  GROUP by g.name
+				  HAVING count(TrackId) < 50);
+				  
+				  
+				  
+DELETE FROM genres 
+WHERE GenreId in (SELECT g.GenreId FROM genres g LEFT JOIN tracks t on g.GenreId = t.GenreId
+                  GROUP by g.name
+                    HAVING count(TrackId) < 50);
                 
